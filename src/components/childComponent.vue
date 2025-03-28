@@ -6,10 +6,12 @@
       <p>Location: {{ favourite ? "Hyderabad" : "Anantapuram" }}</p>
       <button @click="toggleFavorite">{{ favourite ? "Unfavorite" : "Favorite" }}</button>
       <button class="delete-btn" @click="$emit('delete', name)">Delete</button>
+      <InjectorComponent></InjectorComponent>
     </div>
   </template>
   
   <script>
+  import InjectorComponent from './Provider_injector/InjectorComponent.vue';
   export default {
     props: {
       name: String,
@@ -22,6 +24,9 @@
       toggleFavorite() {
         this.$emit("update-favorite", this.name);
       },
+    },
+    components: {
+      InjectorComponent,
     },
   };
   </script>

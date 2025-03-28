@@ -29,11 +29,23 @@ export default {
         { name: "Naresh", age: 25, email: "naresh@gmail.com", favourite: true },
         { name: "Naveen", age: 21, email: "naveen@gmail.com", favourite: false },
       ],
+      foods: [
+        { name: 'Pizza', imgUrl: '/img_pizza.svg' },
+        { name: 'Apple', imgUrl: '/img_apple.svg' },
+        { name: 'Cake', imgUrl: '/img_cake.svg' },
+        { name: 'Fish', imgUrl: '/img_fish.svg' },
+        { name: 'Rice', imgUrl: '/img_rice.svg' }
+      ]
     };
   },
   components: {
     childComponent,
     newContact,
+  },
+  provide() {
+    return {
+      foods: this.foods
+    };
   },
   methods: {
     updateFavorite(friendName) {
