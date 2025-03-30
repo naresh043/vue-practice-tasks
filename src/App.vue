@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <h1>Hello, I'm the Parent Component</h1>
-    <new-contact @add-contact="addContact"></new-contact>
+    <!-- <new-contact @add-contact="addContact"></new-contact> -->
     <div class="friends-list">
-      <child-component
+      <!-- <child-component
         v-for="friend in friends"
         :key="friend.name"
         :name="friend.name"
@@ -12,14 +12,16 @@
         :favourite="friend.favourite"
         @update-favorite="updateFavorite"
         @delete="deleteContact"
-      />
+      /> -->
     </div>
   </div>
+  <TheForm/>
 </template>
 
 <script>
-import childComponent from "./components/childComponent.vue";
-import newContact from "./components/friendContact.vue";
+// import childComponent from "./components/childComponent.vue";
+// import newContact from "./components/friendContact.vue";
+import TheForm from "./forms/TheForm.vue";
 
 export default {
   name: "App",
@@ -39,8 +41,9 @@ export default {
     };
   },
   components: {
-    childComponent,
-    newContact,
+    // childComponent,
+    // newContact,
+    TheForm
   },
   provide() {
     return {
