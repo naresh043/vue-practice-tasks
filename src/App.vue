@@ -1,9 +1,10 @@
-<template>
+<!-- working on provider/injector  -->
+<!-- <template>
   <div id="app">
     <h1>Hello, I'm the Parent Component</h1>
-    <!-- <new-contact @add-contact="addContact"></new-contact> -->
+    <new-contact @add-contact="addContact"></new-contact>
     <div class="friends-list">
-      <!-- <child-component
+      <child-component
         v-for="friend in friends"
         :key="friend.name"
         :name="friend.name"
@@ -12,16 +13,15 @@
         :favourite="friend.favourite"
         @update-favorite="updateFavorite"
         @delete="deleteContact"
-      /> -->
+      />
     </div>
   </div>
   <TheForm/>
 </template>
 
 <script>
-// import childComponent from "./components/childComponent.vue";
-// import newContact from "./components/friendContact.vue";
-import TheForm from "./forms/TheForm.vue";
+import childComponent from "./components/childComponent.vue";
+import newContact from "./components/friendContact.vue";
 
 export default {
   name: "App",
@@ -41,9 +41,9 @@ export default {
     };
   },
   components: {
-    // childComponent,
-    // newContact,
-    TheForm
+    childComponent,
+    newContact,
+   
   },
   provide() {
     return {
@@ -85,4 +85,87 @@ export default {
   flex-wrap: wrap;
   margin-top: 20px;
 }
+</style> -->
+
+<!-- working on Forms  -->
+<!-- <template>
+  <div id="app">
+    <h1>Hello, I'm the Parent Component</h1>
+    <div class="friends-list">
+    </div>
+  </div>
+  <TheForm/>
+</template>
+
+<script>
+import TheForm from "./forms/TheForm.vue";
+
+export default {
+  name: "App",
+ data(){
+  return{
+
+  }
+ },
+  components: {
+    TheForm
+  },
+};
+</script>
+
+<style>
+#app {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: #333;
+  margin-top: 30px;
+}
+.friends-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+</style> -->
+
+<!-- working on router  -->
+<!-- <template>
+  <div id="app">
+    <h1>Hello, I'm the Parent Component</h1>
+    <router-view></router-view>
+  </div>
+</template>
+<script></script>
+<style></style> -->
+
+<template>
+  <nav class="navbar">
+    <router-link to="/" class="nav-link">Home</router-link>
+    <router-link to="/about" class="nav-link">About</router-link>
+    <router-link to="/contact" class="nav-link">Contact</router-link>
+    <router-link to="/dihiybd" class="nav-link">NotFround</router-link>
+  </nav>
+  <router-view></router-view>
+</template>
+
+<style scoped>
+.navbar {
+  background-color: #333;
+  padding: 10px 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #f4a261;
+}
 </style>
+
